@@ -41,7 +41,15 @@ function imageTask() {
     .pipe(image())
     .pipe(dest('pub/images'));
 }
+// Lyssna och utför tasks vid ändring
+function watchTask() {
+    watch(
+        [paths.html, paths.css, paths.js, paths.images],
+        parallel(htmlTask, cssTask, jsTask, imageTask)
+    );
+}
 // Exportera tasks
 exports.default = series(
-    parallel(htmlTask, cssTask, jsTask, imageTask)
-)
+    parallel(htmlTask, cssTask, jsTask, imageTask),
+    watchTask
+);
