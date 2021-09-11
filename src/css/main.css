@@ -1,0 +1,93 @@
+/* Innehåll */
+/* Mobil */
+main {
+    padding: 10px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+p {
+    line-height: 1.5em;
+}
+h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+#image2, #image3 {
+    display: none;
+}
+h2 {
+    font-size: 1.25em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+ul {
+    list-style-type: none;
+}
+form {
+    margin-top: 10px;
+}
+input {
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+textarea {
+    margin-bottom: 5px;
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+}
+#send-btn {
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+#fruit {
+    margin-top: 10px;
+}
+#add-fruit {
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+#delete-fruit {
+    width: 100%;
+    font-size: inherit;
+    font-family: inherit;
+    margin: 5px 0;
+    padding: 5px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+/* Surfplatta */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    main {
+        max-width: 480px;
+    }
+}
+/* Desktop */
+@media only screen and (min-width: 768px) {
+    main {
+        max-width: 640px;
+    }
+}
