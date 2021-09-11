@@ -6,6 +6,8 @@ const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
 // Inkludera gulp-uglify-es
 const uglify = require('gulp-uglify-es').default;
+// Inkludera gulp-imagemin
+const image = require('gulp-image');
 // Sökvägar till HTML, CSS, JS och bilder
 const paths = {
     html: 'src/**/*.html',
@@ -26,14 +28,20 @@ function cssTask() {
     .pipe(cssnano())
     .pipe(dest('pub/css'));
 }
-
+// Slå samman, minifiera och kopiera JS-filer från src till pub
 function jsTask() {
     return src(paths.js)
     .pipe(concat('main.js'))
     .pipe(uglify())
     .pipe(dest('pub/js'));
 }
+// Komprimera och kopiera bilder från src till pub
+function imageTask() {
+    return src(paths.images)
+    .pipe(image())
+    .pipe(dest('pub/images'));
+}
 // Exportera tasks
 exports.default = series(
-    parallel(htmlTask, cssTask, jsTask)
+    parallel(htmlTask, cssTask, jsTask, imageTask)
 )
