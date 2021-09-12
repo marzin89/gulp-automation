@@ -6,7 +6,9 @@ const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
 // Inkludera gulp-uglify-es
 const uglify = require('gulp-uglify-es').default;
-// Inkludera gulp-imagemin
+// Inkludera Browsersync
+const browserSync = require('browser-sync').create();
+// Inkludera gulp-image
 const image = require('gulp-image');
 // Sökvägar till HTML, CSS, JS och bilder
 const paths = {
@@ -26,7 +28,8 @@ function cssTask() {
     return src(paths.css)
     .pipe(concat('styles.css'))
     .pipe(cssnano())
-    .pipe(dest('pub/css'));
+    .pipe(dest('pub/css'))
+    .pipe(browserSync.stream());
 }
 // Slå samman, minifiera och kopiera JS-filer från src till pub
 function jsTask() {
@@ -43,10 +46,15 @@ function imageTask() {
 }
 // Lyssna och utför tasks vid ändring
 function watchTask() {
+    // Starta en webbserver
+    browserSync.init({
+        server: "./pub"
+    });
+    // Lyssna, utför tasks och ladda om webbläsaren
     watch(
         [paths.html, paths.css, paths.js, paths.images],
         parallel(htmlTask, cssTask, jsTask, imageTask)
-    );
+    ).on('change', browserSync.reload);
 }
 // Exportera tasks
 exports.default = series(
