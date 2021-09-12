@@ -39,12 +39,12 @@ footer {
     }
     #education {
         width: 35%;
-        float: left;
+        float: right;
         margin-left: 10px;
     }
     #email-link {
         width: 30%;
-        float: right;
+        float: left;
         margin-left: 10px;
     }
     #semester {
