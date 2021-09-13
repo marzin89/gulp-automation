@@ -18,12 +18,12 @@ const paths = {
     images: 'src/images/*'
 }
 // Tasks
-// Kopiera html-filer från src till dest
+// Kopiera html-filer från src till pub
 function htmlTask() {
     return src(paths.html)
     .pipe(dest('pub'));
 }
-// Slå samman, minifiera och kopiera CSS-filer från src till pub
+// Slå samman, minifiera och kopiera CSS-filer från src till pub, ladda om
 function cssTask() {
     return src(paths.css)
     .pipe(concat('styles.css'))
