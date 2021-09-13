@@ -30,23 +30,22 @@ This project can be used on any machine that has _Node.js_ installed.
 Take the following steps:
 1. Clone the repository to your computer.
 2. Install Gulp globally with the following command 
-(proceed to step 3 if you already have Gulp): _npm install gulp_.
-3. CD into the folder where you cloned the repo and install Gulp 
-locally with the following command: _npm install gulp --save-dev_.
-4. Create an _NPM_ project in your project folder with the following 
-command: _npm init -y_ (or _npm init_ if you want to add project 
-configurations. In which case, just follow the instructions in the 
-terminal).
-5. Install the packages used by the repo with the following command:
-_npm install_.
+(ignore this step if you already have Gulp): _npm install gulp_.
+3. CD into the repository folder and install Gulp locally with 
+the following command: _npm install gulp --save-dev_.
+4. Create an _NPM_ project with the following command: 
+_npm init -y_ (or _npm init_ if you want to add project configurations. 
+In which case, just follow the instructions in the terminal).
+5. Install the packages used by the repository with the following 
+command: _npm install_.
 
 ### File structure 
 Source files can be found in the _src_ folder, which contains the
 _index.html_ file and subdirectories for CSS, JS and image files.
 There are currently multiple CSS and JS files.
 
-The _pub_ folder contains the concatenated/minified files waiting 
-to be tested/published.
+The _pub_ folder contains the concatenated/minified/compressed/copied 
+files waiting to be tested/published.
 
 ### Tasks
 For each file type, there is a task that will be run whenever
