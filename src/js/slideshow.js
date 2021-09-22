@@ -1,7 +1,7 @@
 /* Bildspel */
 'use strict';
 /* Variabler */
-const images = document.querySelectorAll('img');
+const images = document.getElementsByClassName('slideshow');
 let count = 0;
 /* Bildspel */
 function slideshow() {
