@@ -22,6 +22,7 @@ function addFruit() {
         list.appendChild(li);
     } else {
         error[3].innerHTML = 'Skriv en frukt.';
+        error[3].style.display = 'block';
     }
 }
 // Tar bort frukter ur listan
@@ -37,6 +38,7 @@ function deleteFruit() {
         }
     } else {
         error[3].innerHTML = 'Skriv en frukt';
+        error[3].style.display = 'block';
     }
 }
 let bar = 0;
@@ -45,8 +47,10 @@ function checkForm() {
     for (let i = 0; i < contactInputs.length; i++) {
         if (!contactInputs[i].value) {
             error[i].innerHTML = 'Fältet är obligatoriskt.';
+            error[i].style.display = 'block';
         } else {
             error[i].innerHTML = '';
+            error[i].style.display = 'none';
             bar++;
             confirm.innerHTML = '';
         }
@@ -54,5 +58,6 @@ function checkForm() {
 
     if (bar == 3) {
         confirm.innerHTML = 'Meddelandet har skickats.';
+        confirm.style.display = 'block';
     }
 }

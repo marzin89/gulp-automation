@@ -1,7 +1,7 @@
 {
   "name": "labb-2",
   "version": "1.0.0",
-  "description": "",
+  "description": "This simple website is an automation project which uses _Gulp_.\r Its purpose is to speed up the development process by copying,\r concatenating and minifying source files, thus making life easier\r so that more time can be spent on writing high quality code and \r testing. It also provides a simple and clear file structure for\r working files and files waiting to be tested/published.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,14 @@
     "gulp-uglify-es": "^3.0.0",
     "sass": "^1.42.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marzin89/gulp-automation.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/marzin89/gulp-automation/issues"
+  },
+  "homepage": "https://github.com/marzin89/gulp-automation#readme"
 }

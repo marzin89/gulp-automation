@@ -75,9 +75,11 @@ button:hover {
 }
 .error {
     @extend %error-messages;
+    display: none
 }
 #confirm {
     @extend %confirm-messages;
+    display: none;
 }
 /* Bilder */
 img {
