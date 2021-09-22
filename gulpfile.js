@@ -10,10 +10,12 @@ const uglify = require('gulp-uglify-es').default;
 const browserSync = require('browser-sync').create();
 // Inkludera gulp-image
 const image = require('gulp-image');
+// Inkludera gulp-dart-sass
+const sass = require('gulp-dart-sass');
 // Sökvägar till HTML, CSS, JS och bilder
 const paths = {
     html: 'src/**/*.html',
-    css: 'src/**/*.css',
+    sass: 'src/**/*.scss',
     js: 'src/**/*.js',
     images: 'src/images/*'
 }
@@ -23,9 +25,10 @@ function htmlTask() {
     return src(paths.html)
     .pipe(dest('pub'));
 }
-// Slå samman, minifiera och kopiera CSS-filer från src till pub, ladda om
-function cssTask() {
-    return src(paths.css)
+// Kompilera, slå samman, minifiera och kopiera sass-filer från src till pub, ladda om
+function sassTask() {
+    return src(paths.sass)
+    .pipe(sass().on('error', sass.logError))
     .pipe(concat('styles.css'))
     .pipe(cssnano())
     .pipe(dest('pub/css'))
@@ -52,12 +55,12 @@ function watchTask() {
     });
     // Lyssna, utför tasks och ladda om webbläsaren
     watch(
-        [paths.html, paths.css, paths.js, paths.images],
-        parallel(htmlTask, cssTask, jsTask, imageTask)
+        [paths.html, paths.sass, paths.js, paths.images],
+        parallel(htmlTask, sassTask, jsTask, imageTask)
     ).on('change', browserSync.reload);
 }
 // Exportera tasks
 exports.default = series(
-    parallel(htmlTask, cssTask, jsTask, imageTask),
+    parallel(htmlTask, sassTask, jsTask, imageTask),
     watchTask
 );
