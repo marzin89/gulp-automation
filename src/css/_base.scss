@@ -1,6 +1,7 @@
 /* Variabler */
 /* Färger */
-$opacity: 0.3;
+/* Variabeln nedan används för att styra hela färgschemat */
+$opacity: 0.5;
 $primary-color: rgb(0, 250, 100, $opacity);
 $secondary-color: rgb(0, 240, 100);
 $send-btn-color: rgb(0, 150, 100);
@@ -26,24 +27,36 @@ $margin: 10px;
 /* If-else-satser */
 /* Ändrar färgschemat beroende på huvudfärgens opacitet */
 @if opacity($primary-color) > 0.5 {
-    $secondary-color: saturate($secondary-color, 5 * $opacity);
+    $secondary-color: darken($secondary-color, 5 * $opacity);
     $border-color: darken($border-color, 10 * $opacity);
-    $main-nav-color: darken($main-nav-color, 10 * $opacity);
-    $section-color: saturate($section-color, 10 * $opacity);
+    $main-nav-color: darken($main-nav-color, 15 * $opacity);
+    $section-color: darken($section-color, 5 * $opacity);
+    $send-btn-color: darken($send-btn-color, 5 * $opacity);
+    $delete-btn-color: darken($delete-btn-color, 5 * $opacity);
 } @else if opacity($primary-color) < 0.5 {
-    $secondary-color: transparentize($secondary-color, $opacity);
+    $secondary-color: lighten($secondary-color, 20 * $opacity);
     $main-nav-color: lighten($main-nav-color, 10 * $opacity);
     $border-color: lighten($border-color, 10 * $opacity);
-    $section-color: desaturate($section-color, 10 * $opacity);
+    $section-color: lighten($section-color, 5 * $opacity);
+    $send-btn-color: lighten($send-btn-color, 10 * $opacity);
+    $delete-btn-color: lighten($delete-btn-color, 10 * $opacity);
 }
 /* Mixins */
 /* Wrapper i sidhuvud och sidfot */
-@mixin wrapper() {
+@mixin wrappers() {
     margin: 0 auto;
     padding-top: $padding;
     overflow: auto;
     padding-left: $padding;
     padding-right: $padding;
+    /* Surfplatta */
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        max-width: $max-width-tablet;
+    }
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        max-width: $max-width-desktop;
+    }
 }
 /* Knappar */
 @mixin buttons() {

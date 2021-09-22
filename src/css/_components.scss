@@ -8,15 +8,7 @@ header {
     position: fixed;
 }
 #header-wrapper {
-    @include wrapper;
-    /* Surfplatta */
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
-        max-width: $max-width-tablet;
-    }
-    /* Desktop */
-    @media only screen and (min-width: 769px) {
-        max-width: $max-width-desktop;
-    }
+    @include wrappers;
 }
 /* Hamburgerikon */
 #hamburger-icon {
@@ -63,7 +55,7 @@ header {
     @media only screen and (min-width: 769px) {
         display: block;
         ul {
-            width: 385px;
+            max-width: 385px;
             li {
                 margin: 0 5px;
                 background-color: $main-nav-color;
@@ -122,13 +114,5 @@ footer {
     }
 }
 #footer-wrapper {
-    @include wrapper;
-    /* Surfplatta */
-    @media only screen and (min-width: 481px) and (max-width: 768px) {
-        max-width: $max-width-tablet;
-    }
-    /* Desktop */
-    @media only screen and (min-width: 769px) {
-        max-width: $max-width-desktop;
-    }
+    @include wrappers;
 }

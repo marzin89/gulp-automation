@@ -16,6 +16,7 @@ The following tools/packages are used:
 - **gulp-cssnano** is used to minify the concatenated CSS file.
 - **gulp-uglify-es** is used to minify the concatenated JS file.
 - **gulp-image** is used to compress images.
+- **gulp-dart-sass** is used to compile SASS into CSS.
 - **Browsersync** is used to reload the browser window when changes 
 are made to the files in the _pub_ folder. 
 
@@ -41,10 +42,10 @@ command: _npm install_.
 
 ### File structure 
 Source files can be found in the _src_ folder, which contains the
-_index.html_ file and subdirectories for CSS, JS and image files.
-There are currently multiple CSS and JS files.
+_index.html_ file and subdirectories for SASS, JS and image files.
+There are currently multiple SASS and JS files.
 
-The _pub_ folder contains the concatenated/minified/compressed/copied 
+The _pub_ folder contains the compiled/concatenated/minified/compressed/copied 
 files waiting to be tested/published.
 
 ### Tasks
@@ -58,10 +59,10 @@ change is made to a file.
 This task will copy all HTML files in the _src_ folder to the _pub_
 folder whenever a change is made.
 
-#### cssTask
-This task will concatenate, minify and copy the concatenated CSS file
-in the _src_ folder to the _pub_ folder. It will also update the 
-browser window.
+#### sassTask
+This task will compile the SASS files in the _src_ folder into CSS. 
+It will then concatenate, minify and copy the concatenated CSS file 
+to the _pub_ folder. It will also update the browser window.
 
 #### jsTask
 This task will concatenate, minify and copy the concatenated JS file
