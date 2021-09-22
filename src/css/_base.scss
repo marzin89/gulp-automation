@@ -7,6 +7,7 @@ $secondary-color: rgb(0, 240, 100);
 $send-btn-color: rgb(0, 150, 100);
 $delete-btn-color: rgb(150, 0, 50);
 $btn-text-color: white;
+$text-color: black;
 $main-nav-color: rgb(100, 200, 100);
 $border-color: #707070;
 $section-color: rgba(0, 200, 100, $opacity);
@@ -27,19 +28,42 @@ $margin: 10px;
 /* If-else-satser */
 /* Ändrar färgschemat beroende på huvudfärgens opacitet */
 @if opacity($primary-color) > 0.5 {
-    $secondary-color: darken($secondary-color, 5 * $opacity);
+    $secondary-color: darken($secondary-color, 2 * $opacity);
     $border-color: darken($border-color, 10 * $opacity);
     $main-nav-color: darken($main-nav-color, 15 * $opacity);
     $section-color: darken($section-color, 5 * $opacity);
     $send-btn-color: darken($send-btn-color, 5 * $opacity);
     $delete-btn-color: darken($delete-btn-color, 5 * $opacity);
-} @else if opacity($primary-color) < 0.5 {
-    $secondary-color: lighten($secondary-color, 20 * $opacity);
+} @else if opacity($primary-color) == 0.4 {
+    $secondary-color: lighten($secondary-color, 50 * $opacity);
     $main-nav-color: lighten($main-nav-color, 10 * $opacity);
-    $border-color: lighten($border-color, 10 * $opacity);
+    $border-color: lighten($border-color, 50 * $opacity);
     $section-color: lighten($section-color, 5 * $opacity);
-    $send-btn-color: lighten($send-btn-color, 10 * $opacity);
-    $delete-btn-color: lighten($delete-btn-color, 10 * $opacity);
+    $send-btn-color: lighten($send-btn-color, 20 * $opacity);
+    $delete-btn-color: lighten($delete-btn-color, 20 * $opacity);
+} @else if opacity($primary-color) == 0.3 {
+    $secondary-color: lighten($secondary-color, 70 * $opacity);
+    $main-nav-color: lighten($main-nav-color, 15 * $opacity);
+    $border-color: lighten($border-color, 70 * $opacity);
+    $section-color: lighten($section-color, 10 * $opacity);
+    $send-btn-color: lighten($send-btn-color, 20 * $opacity);
+    $delete-btn-color: lighten($delete-btn-color, 20 * $opacity);
+} @else if opacity($primary-color) == 0.2 {
+    $secondary-color: lighten($secondary-color, 150 * $opacity);
+    $main-nav-color: lighten($main-nav-color, 50 * $opacity);
+    $border-color: lighten($border-color, 150 * $opacity);
+    $section-color: lighten($section-color, 20 * $opacity);
+    $send-btn-color: lighten($send-btn-color, 70 * $opacity);
+    $delete-btn-color: lighten($delete-btn-color, 70 * $opacity);
+    $btn-text-color: black;
+} @else if opacity($primary-color) == 0.1 {
+    $secondary-color: lighten($secondary-color, 300 * $opacity);
+    $main-nav-color: lighten($main-nav-color, 100 * $opacity);
+    $border-color: lighten($border-color, 200 * $opacity);
+    $section-color: lighten($section-color, 30 * $opacity);
+    $send-btn-color: lighten($send-btn-color, 200 * $opacity);
+    $delete-btn-color: lighten($delete-btn-color, 200 * $opacity);
+    $btn-text-color: black;
 }
 /* Mixins */
 /* Wrapper i sidhuvud och sidfot */
@@ -76,10 +100,24 @@ $margin: 10px;
     margin-bottom: $margin / 2;
     padding: $padding / 2;
 }
+/* Sektioner */
 @mixin sections() {
     padding: $padding;
     background-color: $section-color;
     margin: $margin / 2 0;
+    color: $text-color;
+}
+/* Inheritance */
+/* Felmeddelanden */
+%error-messages {
+    color: red;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+%confirm-messages {
+    color: darkgreen;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 

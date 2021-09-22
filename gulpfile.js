@@ -11,7 +11,7 @@ const browserSync = require('browser-sync').create();
 // Inkludera gulp-image
 const image = require('gulp-image');
 // Inkludera gulp-dart-sass
-const sass = require('gulp-dart-sass');
+const sass = require('gulp-sass')(require('sass'));
 // Sökvägar till HTML, CSS, JS och bilder
 const paths = {
     html: 'src/**/*.html',

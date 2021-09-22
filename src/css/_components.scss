@@ -41,7 +41,7 @@ header {
             text-align: center;
             a {
                 text-decoration: none;
-                color: black;
+                color: $text-color;;
             }
             :hover {
                 text-decoration: underline;
@@ -57,7 +57,7 @@ header {
         ul {
             max-width: 385px;
             li {
-                margin: 0 5px;
+                margin: 0 $margin / 2;
                 background-color: $main-nav-color;
             }
         }
@@ -73,11 +73,16 @@ header {
 }
 /* Formulär */
 form {
-    @include sections;
     input {
         @include inputs;
     }
     textarea {
+        @include inputs;
+    }
+}
+#buttons {
+    @include sections;
+    input {
         @include inputs;
     }
 }

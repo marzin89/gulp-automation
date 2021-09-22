@@ -47,32 +47,41 @@
         <!-- Lista -->
         <div id="list">
             <h2>Lista</h2>
-            <ul>
-                <li>Äpple</li>
-                <li>Banan</li>
-                <li>Päron</li>
-                <li>Apelsin</li>
-                <li>Mango</li>
+            <ul id="fruit-list">
+                <li class="fruit">Äpple</li>
+                <li class="fruit">Banan</li>
+                <li class="fruit">Päron</li>
+                <li class="fruit">Apelsin</li>
+                <li class="fruit">Mango</li>
             </ul> 
         </div>
         <!-- Formulär -->
-        <form action="index.html">
-            <input id="name" type="text" value="Namn" placeholder="Förnamn Efternamn">
-            <br>
-            <input id="email" type="text" value="Email" placeholder="epost@doman.toppdoman">
-            <br>
-            <textarea name="message" id="message" cols="30" rows="10">
-                Meddelande</textarea>
-            <br>
-        </form>
-        <form action="">
+        <section>
+            <form action="index.html">
+                <input id="name" class="contact-form-inputs" type="text" 
+                placeholder="Namn">
+                <p class="error"></p>
+                <br>
+                <input id="email" class="contact-form-inputs" type="text" 
+                placeholder="epost@doman.toppdoman">
+                <p class="error"></p>
+                <br>
+                <textarea name="message" id="message" class="contact-form-inputs" 
+                cols="30" rows="10" placeholder="Meddelande"></textarea>
+                <p class="error"></p>
+                <br>
+            </form>
             <button id="send-btn">Skicka</button>
+            <p id="confirm"></p>
+        </section>
+        <div id="buttons">
             <input id="fruit" type="text" placeholder="Frukt">
             <br>
             <button id="add-fruit">Lägg till frukt</button>
             <br>
             <button id="delete-fruit">Ta bort frukt</button>
-        </form>
+        <div>
+        <p class="error"></p>
     </main>
     <!-- Sidfot -->
     <footer>

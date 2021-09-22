@@ -16,7 +16,7 @@ The following tools/packages are used:
 - **gulp-cssnano** is used to minify the concatenated CSS file.
 - **gulp-uglify-es** is used to minify the concatenated JS file.
 - **gulp-image** is used to compress images.
-- **gulp-dart-sass** is used to compile SASS into CSS.
+- **gulp-sass** is used to compile SASS into CSS.
 - **Browsersync** is used to reload the browser window when changes 
 are made to the files in the _pub_ folder. 
 
