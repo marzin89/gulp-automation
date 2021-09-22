@@ -1,0 +1,72 @@
+/* Variabler */
+/* Färger */
+$opacity: 0.3;
+$primary-color: rgb(0, 250, 100, $opacity);
+$secondary-color: rgb(0, 240, 100);
+$send-btn-color: rgb(0, 150, 100);
+$delete-btn-color: rgb(150, 0, 50);
+$btn-text-color: white;
+$main-nav-color: rgb(100, 200, 100);
+$border-color: #707070;
+$section-color: rgba(0, 200, 100, $opacity);
+/* Typsnitt */
+$font-stack: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+$font-size: 1em;
+/* Bredd och höjd på sidhuvud och sidfot */
+$header-footer-width: 100%;
+$header-height: 60px;
+$footer-height-mobile: 130px;
+$footer-height-desktop: 60px;
+/* Maxbredd och -höjd på innehållsdelen */
+$max-width-tablet: 480px;
+$max-width-desktop: 640px;
+/* Padding och marginal */
+$padding: 10px;
+$margin: 10px;
+/* If-else-satser */
+/* Ändrar färgschemat beroende på huvudfärgens opacitet */
+@if opacity($primary-color) > 0.5 {
+    $secondary-color: saturate($secondary-color, 5 * $opacity);
+    $border-color: darken($border-color, 10 * $opacity);
+    $main-nav-color: darken($main-nav-color, 10 * $opacity);
+    $section-color: saturate($section-color, 10 * $opacity);
+} @else if opacity($primary-color) < 0.5 {
+    $secondary-color: transparentize($secondary-color, $opacity);
+    $main-nav-color: lighten($main-nav-color, 10 * $opacity);
+    $border-color: lighten($border-color, 10 * $opacity);
+    $section-color: desaturate($section-color, 10 * $opacity);
+}
+/* Mixins */
+/* Wrapper i sidhuvud och sidfot */
+@mixin wrapper() {
+    margin: 0 auto;
+    padding-top: $padding;
+    overflow: auto;
+    padding-left: $padding;
+    padding-right: $padding;
+}
+/* Knappar */
+@mixin buttons() {
+    width: 100%;
+    font-size: $font-size;
+    font-family: $font-stack;
+    margin: $margin / 2 0;
+    padding: $padding / 2;
+    font-weight: bold;
+    border: none;
+}
+/* Inmatningsfält */
+@mixin inputs() {
+    font-size: $font-size;
+    font-family: $font-stack;
+    width: 100%;
+    margin-bottom: $margin / 2;
+    padding: $padding / 2;
+}
+@mixin sections() {
+    padding: $padding;
+    background-color: $section-color;
+    margin: $margin / 2 0;
+}
+
+

@@ -1,0 +1,134 @@
+/* Komponenter */
+/* Sidhuvud */
+header {
+    width: $header-footer-width;
+    border-bottom: 1px solid $border-color;
+    height: $header-height;
+    background-color: $secondary-color;
+    position: fixed;
+}
+#header-wrapper {
+    @include wrapper;
+    /* Surfplatta */
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        max-width: $max-width-tablet;
+    }
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        max-width: $max-width-desktop;
+    }
+}
+/* Hamburgerikon */
+#hamburger-icon {
+    width: 40px;
+    height: 30px;
+    margin: 15px auto;
+    div {
+        height: 5px;
+        margin: $margin / 2 0;
+        background-color: $main-nav-color;
+    }
+    :hover {
+        cursor: pointer;
+    }
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        display: none;
+    }
+    transition: all 0.5s ease-out;
+}
+/* Navigering */
+#main-nav {
+    width: 100%;
+    display: none;
+    background-color: $secondary-color;
+    ul {
+        margin: 0 auto;
+        li {
+            padding: $padding / 2;
+            text-align: center;
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            :hover {
+                text-decoration: underline;
+            }
+        }
+        :hover {
+            background-color: $main-nav-color;
+        }
+    }
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        display: block;
+        ul {
+            width: 385px;
+            li {
+                margin: 0 5px;
+                background-color: $main-nav-color;
+            }
+        }
+    }
+}
+/* Listor */
+#list {
+    @include sections;
+    ul {
+        list-style-type: none;
+        line-height: 1.5 * $font-size;
+    }   
+}
+/* Formulär */
+form {
+    @include sections;
+    input {
+        @include inputs;
+    }
+    textarea {
+        @include inputs;
+    }
+}
+input {
+    @include inputs;
+}
+/* Knappar */
+#send-btn {
+    @include buttons;
+    background-color: $send-btn-color;
+    color: $btn-text-color;
+}
+#add-fruit {
+    @include buttons;
+    background-color: $send-btn-color;
+    color: $btn-text-color;
+}
+#delete-fruit {
+    @include buttons;
+    background-color: $delete-btn-color;
+    color: $btn-text-color;
+}
+/* Sidfot */
+footer {
+    height: $footer-height-mobile;
+    border-top: 1px solid $border-color;
+    position: absolute;
+    width: $header-footer-width;
+    bottom: 0;
+    background-color: $secondary-color;
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        height: $footer-height-desktop;
+    }
+}
+#footer-wrapper {
+    @include wrapper;
+    /* Surfplatta */
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        max-width: $max-width-tablet;
+    }
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        max-width: $max-width-desktop;
+    }
+}

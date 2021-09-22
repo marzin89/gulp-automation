@@ -1,0 +1,108 @@
+/* Layout */
+/* Body */
+body {
+    display: block;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: $footer-height-mobile;
+    font-family: $font-stack;
+    font-size: $font-size;
+    background-color: $primary-color;
+    /* Desktop */
+    @media only screen and (min-width: 769px) {
+        padding-bottom: $footer-height-desktop;
+    }
+}
+/* Innehåll */
+main {
+    padding: 100px $padding;
+    margin: 0 auto;
+    /* Surfplatta */
+    @media only screen and (min-width: 481px) and (max-width: 768px) {
+        max-width: $max-width-tablet;
+    }
+    /* Desktop */
+    @media only screen and (min-width: 768px) {
+        max-width: $max-width-desktop;
+    }
+}
+/* Navigering */
+#main-nav {
+    ul {
+        list-style-type: none;
+        padding: $padding / 2 0;
+        li {
+            /* Desktop */
+            @media only screen and (min-width: 769px) {
+                display: inline-block;
+            }
+        }
+    }
+}
+.bar {
+    transition: all 0.5s ease-out;
+}
+/* Hamburgerikonens utseende när menyn öppnas och stängs */
+.open {
+    .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .bar:nth-child(3) {
+        transform: rotate(-45deg);
+        translate: 0 -13px;
+    }
+}
+/* Text */
+article {
+    @include sections;
+}
+p {
+    line-height: 1.5 * $font-size;
+}
+h1 {
+    font-size: 1.5 * $font-size;
+    margin-bottom: $margin / 2;
+}
+/* Bilder */
+img {
+    width: 100%;
+    height: auto;
+}
+#image2, #image3 {
+    display: none;
+}
+h2 {
+    font-size: 1.25 * $font-size;
+    margin-top: $margin;
+    margin-bottom: $margin / 2;
+}
+/* Text i sidfot */
+/* Desktop */
+@media only screen and (min-width: 769px) {
+    #author {
+        width: 15%;
+        float: left;
+        margin-right: $margin;
+    }
+    #education {
+        width: 35%;
+        float: right;
+        margin-left: $margin;
+    }
+    #email-link {
+        width: 30%;
+        float: left;
+        margin-left: $margin;
+    }
+    #semester {
+        width: 10%;
+        float: right;
+        margin-right: $margin;
+    }
+}
+#footer-wrapper > p {
+    line-height: 1.5 * $font-size;
+}
