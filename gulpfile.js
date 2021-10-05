@@ -12,6 +12,8 @@ const browserSync = require('browser-sync').create();
 const image = require('gulp-image');
 // Inkludera gulp-dart-sass
 const sass = require('gulp-sass')(require('sass'));
+// Inkludera gulp-babel
+const babel = require('gulp-babel');
 // Sökvägar till HTML, CSS, JS och bilder
 const paths = {
     html: 'src/**/*.html',
@@ -38,6 +40,9 @@ function sassTask() {
 function jsTask() {
     return src(paths.js)
     .pipe(concat('main.js'))
+    .pipe(babel({
+        presets: ["@babel/preset-env"]
+    }))
     .pipe(uglify())
     .pipe(dest('pub/js'));
 }
