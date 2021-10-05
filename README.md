@@ -1,10 +1,10 @@
 ## About 
 This simple website is an automation project which uses _Gulp_.
 Its purpose is to speed up the development process by copying,
-concatenating and minifying source files, thus making life easier
-so that more time can be spent on writing high quality code and 
-testing. It also provides a simple and clear file structure for
-working files and files waiting to be tested/published.
+concatenating, transpiling and minifying source files, thus making 
+life easier so that more time can be spent on writing high quality 
+code and testing. It also provides a simple and clear file structure 
+for working files and files waiting to be tested/published.
 
 ### Tools
 As I am completely new to automation, I have chosen (mostly) 
@@ -13,6 +13,8 @@ to use the tools suggested by my teachers at Mittuniversitetet.
 The following tools/packages are used:
 - **Gulp** is used to automate the tasks.
 - **gulp-concat** is used to concatenate CSS and JS files.
+- **gulp-babel** is used to transpile more recent versions of JS for 
+full browser compatibility.
 - **gulp-cssnano** is used to minify the concatenated CSS file.
 - **gulp-uglify-es** is used to minify the concatenated JS file.
 - **gulp-image** is used to compress images.
@@ -65,8 +67,8 @@ It will then concatenate, minify and copy the concatenated CSS file
 to the _pub_ folder. It will also update the browser window.
 
 #### jsTask
-This task will concatenate, minify and copy the concatenated JS file
-in the _src_ folder to the _pub_ folder.
+This task will concatenate, transpile (if necessary), minify and copy 
+the concatenated JS file in the _src_ folder to the _pub_ folder.
 
 #### imageTask
 This task will compress and copy all images in the _src_ folder to the
